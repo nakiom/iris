@@ -13,7 +13,7 @@ defineProps({
     title: String,
 });
 
-const showingNavigationDropdown = ref(false);
+const showingNavigationDropdown = ref(true);
 
 const switchToTeam = (team) => {
     Inertia.put(route('current-team.update'), {
@@ -51,6 +51,9 @@ const logout = () => {
                             <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                                 <JetNavLink :href="route('dashboard')" :active="route().current('dashboard')">
                                     Dashboard
+                                </JetNavLink>
+                                <JetNavLink :href="route('users.index')" :active="route().current('users.index')">
+                                    Users
                                 </JetNavLink>
                             </div>
                         </div>
