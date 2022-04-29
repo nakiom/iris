@@ -19,6 +19,11 @@ class User extends Authenticatable implements MustVerifyEmail
     use HasTeams;
     use Notifiable;
     use TwoFactorAuthenticatable;
+    use HasSorts;
+
+    public $allowed_sorts = [
+        'name', 'email'
+    ];
 
     /**
      * The attributes that are mass assignable.

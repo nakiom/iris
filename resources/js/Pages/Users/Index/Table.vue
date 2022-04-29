@@ -135,9 +135,6 @@
 
 <script>
 	export default {
-		props: [
-			// 'users'
-		],
 		components: {
 			UserTableRow
 		},
