@@ -1,12 +1,14 @@
 <?php
 
+use App\Http\Controllers\Api\PaisController;
+use App\Http\Controllers\Api\UserController;
+use App\Http\Resources\PaisResource;
+use App\Http\Resources\UserCollectionResource;
+use App\Http\Resources\UserResource;
+use App\Models\Pais;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Models\User;
-use App\Models\Pais;
-use App\Http\Resources\UserResource;
-use App\Http\Resources\UserCollectionResource;
-use App\Http\Resources\PaisResource;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,35 +25,20 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/users', function(Request $request) {
-    
-    $users = User::query()
-        ->where('name','like','%'.$request->search.'%')
-        ->orWhere('email','like','%'.$request->search.'%')
-        ->applySorts($request->sort)
-        ->paginate($request->per_page)
-        ->onEachSide(0);
+Route::apiResource('/users', UserController::class)->names([
+    'index' => 'api.users.index',
+    'show' => 'api.users.show',
+    'store' => 'api.users.store',
+    'update' => 'api.users.update',
+    'destroy' => 'api.users.destroy',
+]);
 
-    // User::applySorts($request->sort)->get();
-
-    // return UserResource::collection($users);
-    return new UserCollectionResource($users);
-
-})->name('api.users.index');
-
-Route::get('/paises', function(Request $request) {
-    
-    $paises = Pais::query()
-        ->with('provincias')
-        ->where('nombre','like','%'.$request->search.'%')
-        ->orderBy('nombre')
-        // ->paginate($request->per_page)
-        // ->onEachSide(0);
-        ->get();
-
-    return PaisResource::collection($paises);
-})->name('api.paises.index');
-
-Route::get('/paises/{pais}', function(Pais $pais) {
-    return new PaisResource($pais->load('provincias.distritos.localidades.calles'));
-})->name('api.paises.index');
+Route::apiResource('/paises', PaisController::class)->names([
+    'index' => 'api.paises.index',
+    'show' => 'api.paises.show',
+    'store' => 'api.paises.store',
+    'update' => 'api.paises.update',
+    'destroy' => 'api.paises.destroy',
+])->parameters([
+    'paises' => 'pais'
+]);

@@ -216,6 +216,7 @@
 						search: this.search,
 						page: this.pagination.current_page,
 						per_page: this.pagination.per_page,
+						sort: 'name,email',
 					}
 				}).then(response => {
 					console.log(response)
