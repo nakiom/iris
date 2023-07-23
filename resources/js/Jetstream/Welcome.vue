@@ -10,14 +10,46 @@ import JetApplicationLogo from '@/Jetstream/ApplicationLogo.vue';
             </div>
 
             <div class="mt-8 text-2xl">
-                Welcome to your Jetstream application!
+                Bienvenido!
             </div>
 
             <div class="mt-6 text-gray-500">
-                Laravel Jetstream provides a beautiful, robust starting point for your next Laravel application. Laravel is designed
-                to help you build your application using a development environment that is simple, powerful, and enjoyable. We believe
-                you should love expressing your creativity through programming, so we have spent time carefully crafting the Laravel
-                ecosystem to be a breath of fresh air. We hope you love it.
+                [ información del dia ]
+            </div>
+        </div>
+        
+        <div class="bg-gray-200 bg-opacity-25 grid grid-cols-1 md:grid-cols-4">
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="/image/dashboard/pacientes.jpg" alt="Pacientes" style="height:210px">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Pacientes</div>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#buscar</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#nuevo</span>
+                </div>
+            </div>
+            
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="/image/dashboard/turnos.jpg" alt="Pacientes" style="height:210px">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Turnos</div>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#buscar</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#nuevo</span>
+                </div>
+            </div>
+
+            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+                <img class="w-full" src="/image/dashboard/configuracion.jpg" alt="Pacientes" style="height:210px">
+                <div class="px-6 py-4">
+                    <div class="font-bold text-xl mb-2">Ajustes</div>
+                </div>
+                <div class="px-6 pt-4 pb-2">
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#buscar</span>
+                    <span class="inline-block bg-gray-200 rounded-full px-3 py-1 text-sm font-semibold text-gray-700 mr-2 mb-2">#nuevo</span>
+                </div>
             </div>
         </div>
 
